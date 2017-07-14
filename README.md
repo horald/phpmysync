@@ -1,6 +1,6 @@
 PhpMySync 
 ===================== 
-**PhpMySync** is an HTML5 WebSql Application for several databases (Mysql, PostgreSql, Sqlite) with php. You can synchronize database tables with each database in both direction.
+**PhpMySync** is an HTML5 WebSql Application for several databases (Mysql, Sqlite) with php. You can synchronize database tables with each database in both direction.
 
 Installing
 ==========
