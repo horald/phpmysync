@@ -68,6 +68,12 @@ function updateinput($pararray,$listarray,$idwert,$menu,$menugrp) {
         echo "<dd><input type='text' name='".$arrelement['dbfield']."' value='".$arr[$arrelement['dbfield']]."'/></dd>";
         echo "</dl>";
       break;
+      case 'password':
+        echo "<dl>";
+        echo "<dt><label >".$arrelement['label'].":</label></dt>";
+        echo "<dd><input type='password' name='".$arrelement['dbfield']."' value='".$arr[$arrelement['dbfield']]."'/></dd>";
+        echo "</dl>";
+      break;
       case 'JN':
         echo "<dl>";
         echo "<dt><label >".$arrelement['label'].":</label></dt>";
@@ -233,6 +239,9 @@ function updatesave($pararray,$listarray,$menu,$show,$chkpreis,$menugrp) {
       switch ( $arrelement['type'] )
       {
         case 'text':
+          $sql=$sql.$arrelement['dbfield']."='".$_POST[$arrelement['dbfield']]."', ";
+        break;
+        case 'password':
           $sql=$sql.$arrelement['dbfield']."='".$_POST[$arrelement['dbfield']]."', ";
         break;
         case 'JN':

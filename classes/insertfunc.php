@@ -27,6 +27,12 @@ function insertinput($listarray,$idwert,$menu,$menugrp) {
         echo "<dd><input type='text' name='".$arrelement['dbfield']."' value='".$default."'/></dd>";
         echo "</dl>";
       break;
+      case 'password':
+        echo "<dl>";
+        echo "<dt><label >".$arrelement['label'].":</label></dt>";
+        echo "<dd><input type='password' name='".$arrelement['dbfield']."' value='".$default."'/></dd>";
+        echo "</dl>";
+      break;
       case 'calc':
         echo "<dl>";
         echo "<dt><label >".$arrelement['label'].":</label></dt>";
@@ -186,6 +192,9 @@ function insertsave($pararray,$listarray,$menu,$show,$autoinc_step,$autoinc_star
         case 'text':
           $sql=$sql.$arrelement['dbfield'].",";
         break;
+        case 'password':
+          $sql=$sql.$arrelement['dbfield'].",";
+        break;
         case 'select':
           $sql=$sql.$arrelement['dbfield'].",";
         break;
@@ -214,6 +223,9 @@ function insertsave($pararray,$listarray,$menu,$show,$autoinc_step,$autoinc_star
       switch ( $arrelement['type'] )
       {
         case 'text':
+          $sql=$sql."'".$_POST[$arrelement['dbfield']]."',";
+        break;
+        case 'password':
           $sql=$sql."'".$_POST[$arrelement['dbfield']]."',";
         break;
         case 'selectid':
